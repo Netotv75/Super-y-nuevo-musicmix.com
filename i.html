@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicMix Descargar</title>
+    <style>
+        /* Incluir la fuente personalizada en formato .otf */
+        @font-face {
+            font-family: 'YourCustomFont';
+            src: url('CamptonBold.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'YourCustomFont', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #AFFF02, #96D247, #B3FF00);
+        }
+
+        .title {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .nav-link {
+            color: #003399;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .download-section {
+            text-align: center;
+            padding: 50px 20px;
+            background: url('20240707_204727.jpg') no-repeat center center fixed;
+            background-size: cover;
+            flex-grow: 1;
+            color: white;
+        }
+
+        .download-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .download-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .download-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .version-select {
+            font-size: 1.2rem;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .download-btn {
+            background: linear-gradient(to right, #AFFF02, #96D247, #B3FF00);
+            color: #003399;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(to right, #96D247, #AFFF02, #B3FF00);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background: linear-gradient(to bottom, #0277FF, #015DAC);
+            color: white;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 768px) {
+            .download-container {
+                flex-direction: row;
+            }
+
+            .version-select {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="title">musicmix</h1>
+            <nav>
+                <a href="#" class="nav-link">inicio</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="download-section">
+            <h2>descargar musicmix</h2>
+            <p>eliga su versión de musicmix</p>
+            <div class="download-container">
+                <select id="version-select" class="version-select">
+                    <option value="" disabled selected>Seleccione una versión</option>
+                    <option value="androiddowlo.html">Android</option>
+                    <option value="https://example.com/download/windows">Windows</option>
+                </select>
+                <button class="download-btn" onclick="downloadVersion()">descargar</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 netotv netwoks Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        function downloadVersion() {
+            const versionSelect = document.getElementById('version-select');
+            const selectedVersion = versionSelect.value;
+            
+            if (selectedVersion) {
+                window.location.href = selectedVersion;
+            } else {
+                alert('Por favor, seleccione una versión para descargar.');
+            }
+        }
+    </script>
+</body>
+</html>
